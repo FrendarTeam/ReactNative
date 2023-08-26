@@ -49,16 +49,8 @@ import AppInner from './AppInner';
 //   );
 // };
 
-type Stack = {
-  SignIn: undefined;
-};
-
 const App = () => {
   const isDarkMode = useColorScheme() === 'dark';
-
-  // const backgroundStyle = {
-  //   backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  // };
 
   return (
     <NavigationContainer>
