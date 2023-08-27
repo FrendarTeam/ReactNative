@@ -1,17 +1,27 @@
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {Pressable, StyleSheet, Text, View} from 'react-native';
 
-export default function Schedule(props: {color: string}) {
+interface scheduleProps {
+  color: string;
+  time: string;
+  title: string;
+}
+
+export default function Schedule(props: scheduleProps) {
   return (
     <View
-      style={StyleSheet.compose(styles.dd, {
+      style={StyleSheet.compose(styles.scheduleBox, {
         // backgroundColor: props.color,
       } as any)}>
       <View style={styles.dateLine}>
-        <Text style={styles.dateText}>2023-08-26</Text>
+        <Text style={styles.dateText}>{props.time}</Text>
         <View style={styles.line} />
       </View>
-      <Text>일정</Text>
+      <Pressable>
+        <View style={styles.itemBox}>
+          <Text style={styles.title}>{props.title}</Text>
+        </View>
+      </Pressable>
     </View>
   );
 }
@@ -25,7 +35,7 @@ const styles = StyleSheet.create({
     // backgroundColor: 'green',
     alignItems: 'center',
   },
-  dd: {
+  scheduleBox: {
     paddingTop: 10,
     paddingBottom: 10,
     paddingLeft: 10,
@@ -36,5 +46,17 @@ const styles = StyleSheet.create({
     height: 2,
     backgroundColor: '#E6E6E7',
     marginLeft: 10,
+  },
+  itemBox: {
+    height: 60,
+    marginLeft: 85,
+    borderRadius: 10,
+    backgroundColor: '#D2CBE8',
+
+    alignItems: 'center',
+  },
+  title: {
+    top: 8,
+    fontSize: 16,
   },
 });
