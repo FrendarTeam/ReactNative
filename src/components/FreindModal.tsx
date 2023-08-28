@@ -2,12 +2,15 @@ import {
   Alert,
   Modal,
   Pressable,
+  ScrollView,
   StyleSheet,
   Text,
   TouchableWithoutFeedback,
   View,
 } from 'react-native';
 import React, {useState} from 'react';
+import FreindItem from './FreindItem';
+import FreindAdd from './FreindAdd';
 
 interface Props {
   setIsFreindModal: (boolean: boolean) => void;
@@ -46,12 +49,17 @@ export default function FreindModal(props: Props) {
             X
           </Text>
         </Pressable>
-        <Text style={styles.modalText}>Hello World!</Text>
-        <Pressable
-          style={[styles.button, styles.buttonClose]}
-          onPress={() => props.setIsFreindModal(false)}>
-          <Text style={styles.textStyle}>Hide Modal</Text>
-        </Pressable>
+        <FreindAdd />
+        <ScrollView>
+          <FreindItem nickname="gwonyeong" />
+          <FreindItem nickname="sumin" />
+          <FreindItem nickname="gwonyeong" />
+          <FreindItem nickname="sumin" />
+          <FreindItem nickname="gwonyeong" />
+          <FreindItem nickname="sumin" />
+          <FreindItem nickname="gwonyeong" />
+          <FreindItem nickname="sumin" />
+        </ScrollView>
       </View>
     </Modal>
   );

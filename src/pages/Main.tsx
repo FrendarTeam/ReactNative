@@ -52,6 +52,24 @@ export default function Main() {
             time="PM 06:00"
             title="헬스장 가서 운동하기"
           />
+          <Schedule color="blue" time="18:00" title="치킨 먹기" />
+          <Schedule
+            color="yellow"
+            time="PM 06:00"
+            title="헬스장 가서 운동하기"
+          />
+          <Schedule color="blue" time="18:00" title="치킨 먹기" />
+          <Schedule
+            color="yellow"
+            time="PM 06:00"
+            title="헬스장 가서 운동하기"
+          />
+          <Schedule color="blue" time="18:00" title="치킨 먹기" />
+          <Schedule
+            color="yellow"
+            time="PM 06:00"
+            title="헬스장 가서 운동하기"
+          />
         </ScrollView>
       </View>
     </SafeAreaView>
