@@ -13,7 +13,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
-import {StyleSheet, Text, useColorScheme, View} from 'react-native';
+import {StatusBar, StyleSheet, Text, useColorScheme, View} from 'react-native';
 
 import {Colors} from 'react-native/Libraries/NewAppScreen';
 import Auth from './src/pages/Auth';
@@ -48,14 +48,21 @@ import AppInner from './AppInner';
 //     </View>
 //   );
 // };
+// import font from '@root/';
 
 const App = () => {
   const isDarkMode = useColorScheme() === 'dark';
 
   return (
-    <NavigationContainer>
-      <AppInner />
-    </NavigationContainer>
+    <View style={{flex: 1}}>
+      <NavigationContainer>
+        {/* <Text style={{fontFamily: 'NanumPenScript-Regular'}}>
+          Hello, World!
+        </Text> */}
+
+        <AppInner />
+      </NavigationContainer>
+    </View>
   );
 };
 

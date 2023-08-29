@@ -31,8 +31,8 @@ export default function FreindModal(props: Props) {
           style={{
             backgroundColor: '#D9D9D9',
             borderRadius: 100,
-            width: 40,
-            height: 40,
+            width: 30,
+            height: 30,
             alignItems: 'center',
             marginLeft: 10,
             marginTop: 10,
@@ -40,13 +40,13 @@ export default function FreindModal(props: Props) {
           onPress={() => props.setIsFreindModal(false)}>
           <Text
             style={{
-              fontSize: 30,
-              fontWeight: '800',
+              fontSize: 20,
+              fontWeight: '400',
 
               // backgroundColor: 'red',
               color: 'black',
             }}>
-            X
+            x
           </Text>
         </Pressable>
         <FreindAdd />

@@ -61,9 +61,9 @@ export default function FreindAdd() {
             styles.submitButton,
             isPressSubmitButton ? styles.pressButton : null,
           )}>
-          <Text>친구 추가!</Text>
+          <Text style={{color: 'white'}}>추가!</Text>
         </View>
-        <View style={styles.buttonFoot} />
+        {/* <View style={styles.buttonFoot} /> */}
       </Pressable>
     </View>
   );
@@ -79,9 +79,9 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     height: 90,
     // backgroundColor: 'red',
-    borderColor: 'black',
+    borderColor: '#B4B2B5',
     borderStyle: 'solid',
-    borderWidth: 2,
+    borderWidth: 1,
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -97,12 +97,13 @@ const styles = StyleSheet.create({
     width: 70,
     height: 30,
     top: 0,
-    backgroundColor: 'yellowgreen',
+    backgroundColor: 'gray',
 
     borderRadius: 10,
-    borderColor: 'green',
-    borderStyle: 'solid',
-    borderWidth: 2,
+    // borderColor: 'black',
+    // borderStyle: 'solid',
+    // borderWidth: 1,
+    // color: 'white',
   },
   pressButton: {
     top: 4,
@@ -112,7 +113,7 @@ const styles = StyleSheet.create({
     top: 5,
     borderRadius: 10,
     position: 'absolute',
-    backgroundColor: 'green',
+    backgroundColor: 'black',
     width: 70,
     height: 30,
     zIndex: -1,

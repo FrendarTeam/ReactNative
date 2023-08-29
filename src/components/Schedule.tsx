@@ -1,13 +1,19 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Pressable, StyleSheet, Text, View} from 'react-native';
 
 interface scheduleProps {
+  scheduleId: number;
   color: string;
   time: string;
   title: string;
+  handlePressSchdule: (scheduleId: number) => void;
 }
 
 export default function Schedule(props: scheduleProps) {
+  const pressSchedule = (scheduleId: number) => {
+    props.handlePressSchdule(scheduleId);
+  };
+
   return (
     <View
       style={StyleSheet.compose(styles.scheduleBox, {
@@ -17,7 +23,10 @@ export default function Schedule(props: scheduleProps) {
         <Text style={styles.dateText}>{props.time}</Text>
         <View style={styles.line} />
       </View>
-      <Pressable>
+      <Pressable
+        onPress={() => {
+          pressSchedule(props.scheduleId);
+        }}>
         <View style={styles.itemBox}>
           <Text style={styles.title}>{props.title}</Text>
         </View>
