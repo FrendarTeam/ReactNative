@@ -5,7 +5,7 @@ import FreindModal from './FreindModal';
 
 interface Props {
   setIsFreindModal: (boolean: boolean) => void;
-  //   setIsHambButton: (boolean: boolean) => void;
+  setIsHambButton: (boolean: boolean) => void;
 }
 
 export default function Header(props: Props) {
@@ -14,7 +14,7 @@ export default function Header(props: Props) {
   };
 
   const pressHambButton = () => {
-    // props.setIsHambButton(true);
+    props.setIsHambButton(true);
   };
 
   return (

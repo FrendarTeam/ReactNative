@@ -5,6 +5,7 @@ import {Calendar, LocaleConfig} from 'react-native-calendars';
 import Schedule from 'components/Schedule';
 import Header from 'components/Header';
 import FreindModal from 'components/FreindModal';
+import HambButtonModal from 'components/HambButtonModal';
 
 export default function Main() {
   const [selected, setSelected] = useState('');
@@ -14,6 +15,8 @@ export default function Main() {
   );
 
   const [isFreindModal, setIsFreindModal] = useState<boolean>(false);
+
+  const [isHambButton, setIsHambButton] = useState<boolean>(false);
 
   const handlePressSchedule = (scheduleId: number) => {
     console.log(scheduleId);
@@ -27,7 +30,13 @@ export default function Main() {
       {isFreindModal ? (
         <FreindModal setIsFreindModal={setIsFreindModal} />
       ) : null}
-      <Header setIsFreindModal={setIsFreindModal} />
+      {isHambButton ? (
+        <HambButtonModal setIsHambButton={setIsHambButton} />
+      ) : null}
+      <Header
+        setIsFreindModal={setIsFreindModal}
+        setIsHambButton={setIsHambButton}
+      />
       <Calendar
         onDayPress={day => {
           console.log(day);
