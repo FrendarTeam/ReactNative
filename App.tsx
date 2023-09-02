@@ -18,6 +18,8 @@ import {StatusBar, StyleSheet, Text, useColorScheme, View} from 'react-native';
 import {Colors} from 'react-native/Libraries/NewAppScreen';
 import Auth from './src/pages/Auth';
 import AppInner from './AppInner';
+import {Provider} from 'react-redux';
+import {store} from './src/store';
 
 // const Section: React.FC<
 //   PropsWithChildren<{
@@ -54,15 +56,17 @@ const App = () => {
   const isDarkMode = useColorScheme() === 'dark';
 
   return (
-    <View style={{flex: 1}}>
-      <NavigationContainer>
-        {/* <Text style={{fontFamily: 'NanumPenScript-Regular'}}>
+    <Provider store={store}>
+      <View style={{flex: 1}}>
+        <NavigationContainer>
+          {/* <Text style={{fontFamily: 'NanumPenScript-Regular'}}>
           Hello, World!
         </Text> */}
 
-        <AppInner />
-      </NavigationContainer>
-    </View>
+          <AppInner />
+        </NavigationContainer>
+      </View>
+    </Provider>
   );
 };
 
