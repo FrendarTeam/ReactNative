@@ -1,11 +1,18 @@
 import {createSlice} from '@reduxjs/toolkit';
 
-const initialState = {
-  mainColor: 'red',
+export type color = '#FFF8BD' | '#EEEBFC' | '#DBFAF6' | '#FBE8E5';
+
+interface SettingState {
+  mainColor: color;
+  isAlarm: boolean;
+}
+
+const initialState : SettingState = {
+  mainColor: '#FFF8BD',
   isAlarm: true,
 };
 const settingSlice = createSlice({
-  name: 'user',
+  name: 'setting',
   initialState,
   reducers: {
     setMainColor(state, action) {

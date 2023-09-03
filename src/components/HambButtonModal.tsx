@@ -36,23 +36,54 @@ export default function HambButtonModal(props: Props) {
       visible={true}
       onRequestClose={() => {
         Alert.alert('Modal has been closed.');
-        // props.setIsFreindModal(false);
+        props.setIsHambButton(false);
       }}>
       <View style={styles.modalContainer}>
         <View style={styles.modalView}>
+          <View style={{width: '100%'}}>
+            <Pressable
+              style={{
+                backgroundColor: '#D9D9D9',
+                borderRadius: 100,
+                width: 30,
+                height: 30,
+                alignItems: 'center',
+                marginLeft: 10,
+                marginTop: 10,
+              }}
+              onPress={() => props.setIsHambButton(false)}>
+              <Text
+                style={{
+                  fontSize: 20,
+                  fontWeight: '400',
+
+                  // backgroundColor: 'red',
+                  color: 'black',
+                }}>
+                x
+              </Text>
+            </Pressable>
+          </View>
+          {/* 프로필 사진 */}
           <Image style={styles.profileImage} source={{uri: profileImage}} />
-          <Text style={{fontSize: 20, fontWeight: '800', marginTop: 10}}>
-            {nickname}
-          </Text>
+          {/* 닉네임 */}
+          <View style={{flex: 0.15}}>
+            <Text style={{fontSize: 20, fontWeight: '800', marginTop: 10}}>
+              {nickname}
+            </Text>
+          </View>
           <View />
-          <Pressable>
+          {/*  회원정보 변경 */}
+          <Pressable style={{flex: 0.15, justifyContent: 'center'}}>
             <Text style={{fontSize: 20, fontWeight: '800'}}>회원정보 변경</Text>
           </Pressable>
+          {/* 알림 토글 */}
           <View
             style={{
               alignItems: 'center',
               justifyContent: 'center',
               flexDirection: 'row',
+              flex: 0.15,
             }}>
             <Text style={{fontSize: 20, fontWeight: '800'}}>알림 설정</Text>
 
@@ -64,7 +95,20 @@ export default function HambButtonModal(props: Props) {
               value={isAlarm}
             />
           </View>
-          <MainColor />
+          {/* 메인 컬러 */}
+          <View style={{alignItems: 'center'}}>
+            <Text>메인 컬러</Text>
+            <MainColor />
+          </View>
+          {/* 로그아웃 */}
+          <View
+            style={{
+              flex: 0.15,
+
+              justifyContent: 'center',
+            }}>
+            <Text style={{fontSize: 20, fontWeight: '800'}}>로그아웃</Text>
+          </View>
         </View>
       </View>
     </Modal>
