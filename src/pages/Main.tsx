@@ -6,21 +6,22 @@ import Schedule from 'components/Schedule';
 import Header from 'components/Header';
 import FreindModal from 'components/FreindModal';
 import HambButtonModal from 'components/HambButtonModal';
+import ScheduleModal from 'components/ScheduleModal';
 
 export default function Main() {
   const [selected, setSelected] = useState('');
-  const [isPressSchdule, setIsPressSchdule] = useState<boolean>(false);
   const [selectedScheduleId, setSelectedScheduleId] = useState<number | null>(
     null,
   );
 
   const [isFreindModal, setIsFreindModal] = useState<boolean>(false);
 
-  const [isHambButton, setIsHambButton] = useState<boolean>(false);
+  const [isHambButtonModal, setIsHambButtonModal] = useState<boolean>(false);
+
+  const [isScheduleModal, setIsScheduleModal] = useState<boolean>(false);
 
   const handlePressSchedule = (scheduleId: number) => {
-    console.log(scheduleId);
-    setIsPressSchdule(true);
+    setIsScheduleModal(!isScheduleModal);
     setSelectedScheduleId(scheduleId);
   };
 
@@ -30,16 +31,22 @@ export default function Main() {
       {isFreindModal ? (
         <FreindModal setIsFreindModal={setIsFreindModal} />
       ) : null}
-      {isHambButton ? (
-        <HambButtonModal setIsHambButton={setIsHambButton} />
+      {isHambButtonModal ? (
+        <HambButtonModal setIsHambButton={setIsHambButtonModal} />
+      ) : null}
+      {/* 스케줄을 클릭했으면 스케줄 모달을 출력 */}
+      {isScheduleModal ? (
+        <ScheduleModal
+          setIsScheduleModal={setIsScheduleModal}
+          scheduleId={selectedScheduleId ?? null}
+        />
       ) : null}
       <Header
         setIsFreindModal={setIsFreindModal}
-        setIsHambButton={setIsHambButton}
+        setIsHambButton={setIsHambButtonModal}
       />
       <Calendar
         onDayPress={day => {
-          console.log(day);
           setSelected(day.dateString);
         }}
         theme={

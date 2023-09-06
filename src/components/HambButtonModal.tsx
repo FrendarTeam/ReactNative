@@ -96,8 +96,8 @@ export default function HambButtonModal(props: Props) {
             />
           </View>
           {/* 메인 컬러 */}
-          <View style={{alignItems: 'center'}}>
-            <Text>메인 컬러</Text>
+          <View style={{alignItems: 'center', flex: 0.15}}>
+            <Text style={{marginBottom: 10}}>Color</Text>
             <MainColor />
           </View>
           {/* 로그아웃 */}
