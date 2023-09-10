@@ -159,6 +159,23 @@ export default function ScheduleModal(props: Props) {
                   value={isOpen}
                 />
               </View>
+              <View
+                style={{
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  flexDirection: 'row',
+                  flex: 0.15,
+                }}>
+                <Text style={{fontSize: 20, fontWeight: '800'}}>나만 보기</Text>
+
+                <Switch
+                  trackColor={{false: '#767577', true: 'green'}}
+                  thumbColor={isOpen ? '#f4f3f4' : '#f4f3f4'}
+                  ios_backgroundColor="#3e3e3e"
+                  onValueChange={handleIsOpen}
+                  value={isOpen}
+                />
+              </View>
             </View>
           </ScrollView>
         </View>
