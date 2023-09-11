@@ -40,7 +40,6 @@ export default function ScheduleModal(props: Props) {
       '참가자3',
       '참가자1',
       '참가자2',
-      '참가자3',
     ],
   });
 
