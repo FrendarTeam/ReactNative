@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Frendar</string>
+    <string name="kakao_app_key">af940cd7312d6a5c97597cee81e849c5</string>
 </resources>
